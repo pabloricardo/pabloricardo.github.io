@@ -1,0 +1,8 @@
+1.Conferir versão do bli-chat-web https://www.npmjs.com/package/blip-chat-web
+
+1.1	Se for prod atualizar o caminho na sua pagina index <script src="https://unpkg.com/blip-chat-web@1.0.2" type="text/javascript"></script>
+	
+1.2	Se for hmg baixar a versão mais recente e colocar no servidor
+		https://teamcity.takenet.com.br/project.html?projectId=Omni
+		BLiP SDK - Web
+		Continuos Integration - Artifacts - blipWebSdk.js

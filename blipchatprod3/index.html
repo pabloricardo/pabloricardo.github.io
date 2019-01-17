@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        html, body { width: 100%; height: 100%; margin: 0; background-image: url("img-prod3.png")}
+  </style>
+</head>
+
+<body id="sdkTarget">
+
+        <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
+        </script>
+        <script>
+            (function () {
+                window.onload = function () {
+                    new BlipChat()
+                    .withAppKey('dGVzdGV2YXJpYXZlaXM6MWRlMTJmYTMtZGU3Zi00Y2Y4LTkzMjMtNDA5ZDhjZTgzNTBi')
+                    .withButton({"color":"#2CC3D5","icon":"https://s3-sa-east-1.amazonaws.com/msging.net/Services/Images/ad9a5877-9799-4a04-86f5-c07aadef565c"})
+                    .build();
+                }
+            })();
+        </script>
+                                        
+
+
+
+</body>
+
+</html>
+<!--   .withTarget("div02")
+            .withEventHandler(BlipChat.ENTER_EVENT, () => console.log('enter'))
+            .withEventHandler(BlipChat.LEAVE_EVENT, () => console.log('leave'))
+            .withEventHandler(BlipChat.LOAD_EVENT, () => console.log('chatloaded')) 
+            .withEventHandler(BlipChat.CREATE_ACCOUNT_EVENT, function () {console.log('account created')})
+          
+          
+          -->
