@@ -13,7 +13,7 @@
 <body id="sdkTarget">
 
 
-  <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
+  <script src="https://unpkg.com/blip-chat-widget@1.6.0-beta.1" type="text/javascript">
   </script>
   <script>
       (function () {
@@ -24,15 +24,9 @@
               .withAuth({
               authType: BlipChat.GUEST_AUTH,
             })
-            .withCustomCommonUrl(
-                ''
-              )
-              .withConnectionData({
-              port: '443',
-              hostName: 'pagseguro-ws.0mn.io',
-              domain: '0mn.io'
-            })
-              .build();
+            .withCustomCommonUrl('https://hmg-chat.blip.ai')
+            .withoutHistory()
+            .build();
           }
       })();
   </script>
