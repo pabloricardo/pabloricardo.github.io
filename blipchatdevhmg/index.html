@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>BlipChat widget</title>
-  <script src="https://unpkg.com/blip-chat-widget@1.6.0-beta.1" type="text/javascript"></script>
-  <!--<script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>-->
+  <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
+  </script>
 </head>
 
 <body>
@@ -109,7 +109,7 @@
 
          
           const environment = document.getElementById('environment').value ? document.getElementById('environment').value : 'homolog'  //production
-          const appKey = document.getElementById('app-key').value || 'YmxpcHRlc3RjYXJkczo3YTcwZTUyNi04YzNjLTRmNGQtYWZjYi00ZWFmNzk5ZDFmNjk='
+          const appKey = document.getElementById('app-key').value || 'dGVzdGVjYXJkczo3YTcwNjE1Yy05ZThiLTRjY2ItYmQwNy0xZWM1MDlhOGIxY2Y='
 
           builder = new BlipChat()
             .withAppKey(appKey)
@@ -117,7 +117,8 @@
             .withTarget(target)
             .withEnvironment(environment)
             .withAuth(authConfig)
-            .withoutHistory()
+            //Não recuperara histórico
+            // .withoutHistory()
             .withAccount({
               "fullName": "",
               "phoneNumber": "",
