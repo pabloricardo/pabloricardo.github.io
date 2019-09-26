@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <style>
-    html, body { width: 100%; height: 100%; margin: 0; background-image: url("img-prod3.png")}
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      background-image: url("img-prod3.png")
+    }
   </style>
 </head>
 
 <body id="sdkTarget">
 
-  <script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
+  <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
+  </script>
   <script>
     (function () {
       window.onload = function () {
-        new BlipChat()
-          .withAppKey('dGVzdGNhcmRzYmxpcDE6OTM0M2U3YWItMGU4Yi00ZGE4LTlmZjAtMGMwMGJkNjJhNjMz')
+        var blipClient = new BlipChat()
+          .withAppKey('dGVzdGVjaGFtYWRvOjY5ODc1OTJiLThmOWQtNDhlYy1iMWNlLWQwY2I1NzUyZmI5YQ==')
           .withButton({ "color": "#24908b", "icon": "https://s3-sa-east-1.amazonaws.com/msging.net/Services/Images/e7a24f87-5616-4f80-9f32-4b3efb8fb378" })
-          // .withAuth({
-          //     authType: BlipChat.DEV_AUTH,
-          //     userIdentity: '1234567',
-          //     userPassword: 'MTIzNDU2',
-          //   })
-          .build();
+          .withAccount({
+            county: 'John Doe',
+            email: 'johndoe@gmail.com',
+            phoneNumber: '+15055034455',
+            city: 'Decatur',
+          })
+          .withEventHandler(BlipChat.CREATE_ACCOUNT_EVENT, function () {
+            blipClient.sendMessage({
+              type: "application/vnd.lime.chatstate+json",
+              content: {
+                state: "composing"
+              }
+            })
+          })
+        blipClient.build();
       }
     })();
   </script>
 
 </body>
+
 </html>
 <!--   .withTarget("div02")
             .withEventHandler(BlipChat.ENTER_EVENT, () => console.log('enter'))
